@@ -33,7 +33,7 @@ function handleCreateBox() {
 }
 
 function createBoxes(amount) {
-  const markup = [];
+  let markup = "";
   for (let i = 0; i < amount; i += 1) {
     const colorBox = getRandomHexColor();
 
@@ -41,9 +41,9 @@ function createBoxes(amount) {
       30 + i * 10
     }px; background-color:${colorBox}"></div>`;
 
-    markup.push(markupDivEl);
+    markup += markupDivEl;
   }
-  containerBoxes.innerHTML = markup.join("");
+  containerBoxes.innerHTML = markup;
 }
 
 function handleDestroy() {
